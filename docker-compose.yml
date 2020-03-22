@@ -1,0 +1,30 @@
+version: "3"
+services:
+  web:
+    build: ./web
+    depends_on:
+      - db
+      - redis
+    environment:
+      TZ: Asia/Ho_Chi_Minh
+    volumes:
+      - ./www:/var/www
+    working_dir: /var/www
+    ports:
+      - "80:80"
+      - "443:443"
+
+  db:
+    build: ./db
+    environment:
+      TZ: Asia/Ho_Chi_Minh
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_docker
+      MYSQL_HOST: ""
+    volumes:
+      - ./db/data:/var/lib/mysql
+
+  redis:
+    build: ./redis
+    environment:
+      TZ: Asia/Ho_Chi_Minh
