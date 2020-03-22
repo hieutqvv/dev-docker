@@ -2,7 +2,7 @@
 
 Apache+mod_php / MySQL
 
-## 環境構築
+## Environment
 ### 1.docker install
 https://hub.docker.com/search/?offering=community&type=edition
 install from above
@@ -29,8 +29,8 @@ Run `docker-compose up -d` to start the container.
 ### 8.Access
 If you can access to the domain that you configured, you're ready!
 
-## その他 - Others
-### コンテナ情報 - Container info
+## Others
+### Container info
 dev-docker_db_1 →　DB container  
 dev-docker_redis_1 →　Redis container  
 dev-docker_web_1　→　Web container 
