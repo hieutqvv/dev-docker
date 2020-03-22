@@ -1,4 +1,4 @@
-# gacha-docker
+# dev-docker
 
 Apache+mod_php / MySQL
 
