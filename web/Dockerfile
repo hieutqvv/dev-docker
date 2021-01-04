@@ -1,11 +1,11 @@
-FROM php:7.2-apache
+FROM php:7.4.13-apache
 
 RUN apt-get update
-RUN apt-get install -y vim zlib1g-dev libjpeg-dev libpng-dev libfreetype6-dev mysql-client
+RUN apt-get install -y vim zlib1g-dev libjpeg-dev libpng-dev libfreetype6-dev mysql-client-*
 
 # install PHP extensions
 RUN docker-php-ext-install pdo_mysql
-RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
+RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/
 RUN docker-php-ext-install gd
 RUN docker-php-ext-install mysqli
 
